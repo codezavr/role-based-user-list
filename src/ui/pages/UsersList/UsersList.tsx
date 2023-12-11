@@ -30,7 +30,7 @@ const UsersList = () => {
 
     useEffect(() => {
         getUsersData();
-    }, [getUsersData]);
+    }, []);
 
     if (isLoading) {
         return <CircularProgressLoader/>;
