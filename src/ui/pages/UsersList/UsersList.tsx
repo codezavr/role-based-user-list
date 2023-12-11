@@ -1,5 +1,5 @@
 import TableContainer from '@mui/material/TableContainer/TableContainer';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import Paper from '@mui/material/Paper';
 import { Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material';
 import Typography from '@mui/material/Typography';
@@ -15,7 +15,7 @@ const UsersList = () => {
     const [users, setUsers] = useState<UsersData>([]);
     const [isLoading, setIsLoading] = useState<boolean>(true);
 
-    const getUsersData = async () => {
+    const getUsersData = useCallback(async () => {
         setIsLoading(true);
         try {
             const users = await userService.getUsers();
@@ -26,11 +26,11 @@ const UsersList = () => {
             setIsLoading(false);
         }
 
-    }
+    }, [openAndNotify])
 
     useEffect(() => {
         getUsersData();
-    }, []);
+    }, [getUsersData]);
 
     if (isLoading) {
         return <CircularProgressLoader/>;
