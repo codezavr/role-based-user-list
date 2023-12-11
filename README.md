@@ -2,11 +2,18 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## User credentials to Login - login:password
+
+### `user:user`
+### `admin:admin`
+### `super_admin:super_admin`
+
+
 ## Available Scripts
 
 In the project directory, you can run:
 
-### `yarn run dev`
+### `yarn dev`
 
 Runs the app (front-end / back-end) in the development mode.\
 Open [http://localhost:3000](http://localhost:3000) to view it in the browser / [http://localhost:3001](http://localhost:3001) for the back-end part of the application.
