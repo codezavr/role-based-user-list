@@ -69,7 +69,11 @@ const UsersList = () => {
                                 <TableCell align="right">{ row.gender }</TableCell>
                                 { isUserAdmin &&
                                     <TableCell align="right">{ row.ip_address }</TableCell> }
-                                <TableCell align="right">{ row.friends[0].name }</TableCell>
+                                <TableCell align="right">
+                                    { row.friends && row.friends.map((friend, index, arr) => {
+                                        return <span key={ index }>{ friend.name }{ index === arr.length - 1 ? '' : ',' } </span>;
+                                    }) }
+                                </TableCell>
                             </TableRow>
                         )) }
                     </TableBody>
